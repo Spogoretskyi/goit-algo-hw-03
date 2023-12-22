@@ -28,7 +28,14 @@ def recursive_copy(src: Path, dest: Path):
         if child.is_dir():
             recursive_copy(child, dest / child.name)
         else:
+            extension = child.suffix[1:]
+            destination_path = dest / extension / child.name
+            destination_path.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(child, dest / child.suffix[1:] / child.name)
+
+display_tree(Path("C:\Test"))
+
+recursive_copy(Path("C:\Test"), Path('C:\Test_dist'))
 
 
 def main():
