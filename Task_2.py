@@ -41,7 +41,7 @@ def draw_koch_curve(order, size=300):
 
 if __name__ == "__main__":
     try:
-        order = int(input("Введіть рівень рекурсії: "))
+        order = int(input("Enter the recursion level: "))
     except:
         order = 3  # Значення за замовчуванням
 
